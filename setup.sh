@@ -16,6 +16,13 @@ sql_files=(ddl.sql pk.sql constraint.sql index.sql)
 script_dir="/scripts"
 temp_dir="/tmp"
 
+# Check if the schema already exists
+schema_exists=$(PGPASSWORD="$DB_PASSWORD" psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -tAc "SELECT 1 FROM information_schema.schemata WHERE schema_name = '${SCHEMA_NAME}'")
+if [ "$schema_exists" ]; then
+    echo "Schema '${SCHEMA_NAME}' already exists. Skipping CDM creation."
+    exit 0  # Exit gracefully
+fi
+
 # Create the schema
 PGPASSWORD="$DB_PASSWORD" psql -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" -c "CREATE SCHEMA IF NOT EXISTS ${SCHEMA_NAME};"
 
