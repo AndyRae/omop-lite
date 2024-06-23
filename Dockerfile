@@ -1,7 +1,6 @@
 FROM alpine:latest
 
-RUN apk --no-cache add bash
-RUN apk --no-cache add postgresql-client
+RUN apk --no-cache add bash postgresql-client
 
 # Set environment variables
 ENV DB_HOST="db"
