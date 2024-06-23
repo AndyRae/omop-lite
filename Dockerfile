@@ -2,6 +2,10 @@ FROM alpine:latest
 
 RUN apk --no-cache add bash postgresql-client
 
+LABEL org.opencontainers.image.source=https://github.com/AndyRae/omop-lite
+LABEL org.opencontainers.image.description="A small container to get an OMOP CDM Vocabulary Postgres database running quickly."
+LABEL org.opencontainers.image.licenses=MIT
+
 # Set environment variables
 ENV DB_HOST="db"
 ENV DB_PORT="5432"
