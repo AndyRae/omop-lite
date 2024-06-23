@@ -1,6 +1,6 @@
 # omop-lite
 
-A small container to get a OMOP CDM Vocabulary Postgres database running quickly.
+A small container to get an OMOP CDM Vocabulary Postgres database running quickly.
 
 Drop your Vocabularies into `vocabs/`, and run the container.
 
@@ -41,7 +41,7 @@ services:
 
 ## Bring Your Own Vocabularies
 
-You can provide your own data for loading into the tables by placing your CSV files in the vocabs directory. This directory should contain CSV files named according to the vocab tables (e.g., DRUG_STRENGTH.csv, CONCEPT.csv, etc.).
+You can provide your own data for loading into the tables by placing your CSV files in the `vocabs/` directory. This directory should contain CSV files named according to the vocab tables (DRUG_STRENGTH.csv, CONCEPT.csv, etc.).
 
 ## Setup Script
 
