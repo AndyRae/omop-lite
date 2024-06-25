@@ -1,0 +1,19 @@
+name: test
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test-env:
+    runs-on: ubuntu-latest
+    environment: dev
+
+    steps:
+      - name: Echo
+        run: echo $MY_VAR
+
+      - name: Echo
+        run: echo $MY_VAR_1
+        
