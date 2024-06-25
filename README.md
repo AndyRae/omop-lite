@@ -41,7 +41,7 @@ services:
 
 ## Bring Your Own Vocabularies
 
-You can provide your own data for loading into the tables by placing your CSV files in the `vocabs/` directory. This directory should contain CSV files named according to the vocab tables (DRUG_STRENGTH.csv, CONCEPT.csv, etc.).
+You can provide your own data for loading into the tables by placing your CSV files in the `vocabs/` directory. This should contain `.csv` files matching the vocab tables (`DRUG_STRENGTH.csv`, `CONCEPT.csv`, etc.).
 
 ## Setup Script
 
@@ -49,4 +49,4 @@ The `setup.sh` script included in the Docker image will:
 
 1. Create the schema if it does not already exist.
 2. Execute the SQL files to set up the database schema, constraints, and indexes.
-3. Load data from the CSV files located in the `VOCAB_DATA_DIR`.
+3. Load data from the `.csv` files located in the `VOCAB_DATA_DIR`.
