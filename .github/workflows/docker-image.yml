@@ -11,9 +11,9 @@ jobs:
     environment: dev
 
     steps:
-      - name: Echo
-        run: echo $MY_VAR
+      - name: Echo 
+        run: echo ${{ env.MY_VAR }}
 
       - name: Echo
-        run: echo $MY_VAR_1
+        run: echo ${{ vars.MY_VAR_1 }}
         
