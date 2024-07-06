@@ -18,7 +18,7 @@ script_dir="/scripts"
 temp_dir="/tmp"
 
 echo "Waiting for the Database.."
-wait4x tcp://${DB_HOST}:${DB_PORT} --timeout 60
+wait4x postgresql postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=disable --timeout 60s
 echo "Database is up - continuing.."
 
 # Check if the schema already exists
