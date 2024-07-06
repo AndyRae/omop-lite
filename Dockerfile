@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk --no-cache add bash postgresql-client
+RUN apk --no-cache add bash postgresql-client wait4x
 
 LABEL org.opencontainers.image.source=https://github.com/AndyRae/omop-lite
 LABEL org.opencontainers.image.description="A small container to get an OMOP CDM Vocabulary Postgres database running quickly."
