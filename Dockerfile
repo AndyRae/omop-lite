@@ -1,10 +1,9 @@
 FROM alpine:latest
 
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 RUN apk --no-cache add bash postgresql-client wait4x
 
-LABEL org.opencontainers.image.source=https://github.com/AndyRae/omop-lite
-LABEL org.opencontainers.image.description="A small container to get an OMOP CDM Vocabulary Postgres database running quickly."
-LABEL org.opencontainers.image.licenses=MIT
+USER appuser
 
 # Set environment variables
 ENV DB_HOST="db"
@@ -16,8 +15,8 @@ ENV SCHEMA_NAME="omop"
 ENV VOCAB_DATA_DIR="vocabs"
 
 # Copy files
-COPY scripts /scripts
-COPY setup.sh /setup.sh
+COPY --chown=appuser:appgroup scripts /scripts
+COPY --chown=appuser:appgroup setup.sh /setup.sh
 RUN chmod +x /setup.sh
 
 # Set entrypoint
