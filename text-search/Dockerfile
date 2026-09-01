@@ -1,4 +1,4 @@
-FROM python:3.13-bookworm
+FROM python:3.14-bookworm
 
 RUN pip install --no-cache psycopg pgvector polars tqdm pyarrow
 
