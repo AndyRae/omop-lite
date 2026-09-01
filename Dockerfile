@@ -1,5 +1,5 @@
 # Install uv
-FROM python:3.13-slim AS builder
+FROM python:3.14-slim AS builder
 COPY --from=ghcr.io/astral-sh/uv:0.10.9 /uv /uvx /bin/
 
 # Git is required for hatch-vcs / setuptools-scm to resolve the package version
@@ -24,7 +24,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-editable --no-dev
 
 # ------
-FROM python:3.13-slim
+FROM python:3.14-slim
 
 # Install required packages and SQL Server ODBC driver
 RUN apt-get update && \
