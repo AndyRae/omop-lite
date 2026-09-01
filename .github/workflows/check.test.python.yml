@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
 
       - name: Setup uv
-        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
         with:
           version: "0.10.4"
           enable-cache: true
@@ -84,7 +84,7 @@ jobs:
 
       - name: Pytest coverage comment
         if: github.event.pull_request.head.repo.fork == false
-        uses: MishaKav/pytest-coverage-comment@fd9adbdca9fdfbe2b9bfa44a7340e6a83346ce6c
+        uses: MishaKav/pytest-coverage-comment@d46d9d594f3e1d11008ed19939deb7a139b18751
         with:
           pytest-coverage-path: pytest-coverage.txt
           junitxml-path: pytest.xml
